@@ -1,0 +1,4 @@
+
+A trivial little stopwatch application.  Vaguely useful(?) for tracking time
+spent on task.  Requires python, GTK, pygtk.
+
