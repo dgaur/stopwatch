@@ -1,4 +1,11 @@
 #!/usr/bin/env python
+#
+# A trivial little stopwatch application.  Useful for tracking 'billable time',
+# and 'how long have I wasted on ...' sorts of things.
+#
+# Usage:
+#    % python stopwatch.py
+#
 
 import datetime
 
@@ -50,10 +57,12 @@ class Stopwatch(object):
 
 
 	def destroy(self, widget, data=None):
+		"""Window deletion callback.  Close the application"""
 		gtk.main_quit()
 
 
 	def refresh_time(self):
+		"""Update the elapsed time display"""
 		if (self.enabled):
 			self.elapsed_time += ONE_SECOND
 			#self.window.set_title("stopwatch %s" % self.elapsed_time)
@@ -63,6 +72,7 @@ class Stopwatch(object):
 
 
 	def toggle_time(self, widget, data=None):
+		"""Start or stop the stopwatch, as appropriate"""
 		if (self.enabled):
 			self.enabled = False
 			self.button.set_label("Start")
